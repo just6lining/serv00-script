@@ -38,7 +38,7 @@ except json.JSONDecodeError:
 # 初始化汇总消息
 beijing_timezone = timezone(timedelta(hours=8))
 time = datetime.now(beijing_timezone).strftime('%Y-%m-%d %H:%M:%S')
-summary_message = "serv00-vless 恢复操作结果：\n {time} \n "
+summary_message += "serv00-vless 恢复操作结果：\n {time} \n "
 
 # 默认恢复命令
 default_restore_command = "cd ~/domains/$USER.serv00.net/vless && ./check_vless.sh"
