@@ -2,7 +2,6 @@ import os
 import json
 import subprocess
 import requests
-from datetime import datetime, timezone, timedelta
 
 def send_telegram_message(token, chat_id, message):
     telegram_url = f"https://api.telegram.org/bot{token}/sendMessage"
@@ -37,9 +36,6 @@ except json.JSONDecodeError:
 
 # 初始化汇总消息
 summary_message = "serv00-vless 恢复操作结果：\n"
-beijing_timezone = timezone(timedelta(hours=8))
-time = datetime.now(beijing_timezone).strftime('%Y-%m-%d %H:%M:%S')
-summary_message += f"时间:{time} \n "
 
 # 默认恢复命令
 default_restore_command = "cd ~/domains/$USER.serv00.net/vless && ./check_vless.sh"
